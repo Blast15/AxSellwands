@@ -115,7 +115,7 @@ public class SellwandUseListener implements Listener {
                 return;
             }
 
-            AxSellwandsSellEvent apiEvent = new AxSellwandsSellEvent(player, newSoldPrice, newSoldAmount);
+            AxSellwandsSellEvent apiEvent = new AxSellwandsSellEvent(player, newSoldPrice, newSoldAmount, items);
             Bukkit.getPluginManager().callEvent(apiEvent);
             if (apiEvent.isCancelled()) return;
             newSoldPrice = apiEvent.getMoneyMade();
